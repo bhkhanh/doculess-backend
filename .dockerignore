@@ -1,0 +1,9 @@
+.DS_Store
+.vscode/
+LICENSE
+README.md
+pyproject.toml
+requirements.dev.txt
+.flake8
+.git/
+.gitignore

@@ -1,0 +1,22 @@
+services:
+  web_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: local
+    image: doculess-backend:local
+    container_name: doculess-backend-local
+    restart: always
+    env_file:
+      - .env/.local.django.env
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/src
+    networks:
+      - doculess
+
+networks:
+  doculess:
+    name: doculess
+    external: true

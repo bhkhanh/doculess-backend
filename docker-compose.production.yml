@@ -1,0 +1,20 @@
+services:
+  web_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: doculess-backend:production
+    container_name: doculess-backend-production
+    restart: always
+    env_file:
+      - .env/.production.django.env
+    ports:
+      - 8000:8000
+    networks:
+      - doculess
+
+networks:
+  doculess:
+    name: doculess
+    external: true
